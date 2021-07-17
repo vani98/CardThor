@@ -1,0 +1,100 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    min-height: 100vh;
+}
+.card{
+    margin:auto;
+    height: 320px;
+    width: 550px;
+    background: linear-gradient(to bottom right, black, #dd4a40);
+    border-radius:15px;
+    position: relative;
+    transition: all 500ms ease-out;
+}
+.content{
+    margin-left:190px;
+    margin-top: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 500ms ease-out;
+}
+.card .content h2{
+    color:white;
+    font-size: 40px;
+    font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
+    margin-bottom: 10px;
+}
+.card .content p{
+    color:white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 230px;
+    margin-top: 2%;
+    margin-bottom: 10%;
+}
+.card .content a{
+    color:black;
+    background: white;
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 10px;
+}
+.card::before {
+    content: 'Empecemos';
+    position: absolute;
+    color: white;
+    background-color: #111111;
+    padding: 8px 16px;
+    font-size: 13px;
+    top:-3%;
+    left:50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.card img{
+    position: absolute;
+    bottom: 0px;
+    left:50%;
+    transform: translateX(-50%);
+    height:280px;
+    width:220px; 
+    transition: all 500ms ease-out;
+}
+.card:hover img{
+    height: 400px;
+    width: 300px;
+    transform: translateX(13%);
+    transition: all 500ms ease-out; 
+}
+.card:hover .content{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-40%);
+    transition: all 500ms ease-out;
+}
+@media screen and (max-width:680px){
+    .card:hover{
+        height: 500px;
+        transition: all 500ms ease-out;
+    }
+    .card:hover img{
+        height: 250px;
+        width: 200px;
+        left:50%; 
+        transform: translateX(-50%);
+    }
+    .card .content p{
+        width:100%;
+    }
+    .card .content{
+        margin:70px 40px;
+    }
+    .card:hover .content{
+        transform: translateY(-20%);
+    }      
+}
